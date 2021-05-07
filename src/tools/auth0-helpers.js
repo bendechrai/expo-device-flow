@@ -49,7 +49,6 @@ export const pollForTokens = (deviceData) => {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.info(json);
         // If we have a token, return the whole JSON payload
         if (json.id_token) {
           resolve(json);

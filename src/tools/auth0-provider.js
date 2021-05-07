@@ -53,7 +53,6 @@ function Auth0Provider({ children }) {
           setIsPolling(false);
         })
         .catch((e) => {
-          console.warn(e);
           setIsPolling(false);
         });
     }

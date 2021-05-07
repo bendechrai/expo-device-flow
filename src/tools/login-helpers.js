@@ -16,7 +16,6 @@ export const autoLogin = () => {
 };
 
 export const rememberUser = (tokens) => {
-  console.info("Saving", tokens);
   return new Promise((resolve, reject) => {
     SecureStore.isAvailableAsync().then((isAvailable) => {
       isAvailable &&
