@@ -1,7 +1,3 @@
-import React, { createContext, useEffect, useReducer, useState } from "react";
-import * as SecureStore from "expo-secure-store";
-import jwt_decode from "jwt-decode";
-
 let pollTimer = null;
 
 /**
@@ -68,9 +64,7 @@ export const pollForTokens = (deviceData) => {
             reject("Login timed out. Please try again.");
             break;
           case "access_denied":
-            reject(
-              "This device isn't authorised for that account. Please try again or contact your service provider."
-            );
+            reject("This device isn't authorised for that account. Please try again or contact your service provider.");
             break;
           case "invalid_grant":
             reject("An unspecified error occured.");

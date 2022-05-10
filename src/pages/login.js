@@ -3,19 +3,16 @@ import { Text, View, Button } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import QRCode from "react-native-qrcode-svg";
 
-// import { getDeviceData, cancelTokenPoll, getIdToken } from "../tools/auth";
 import { Auth0 } from "../tools/auth0-provider";
 
 import { styles } from "../styles";
 
-export default LoginPrompt = () => {
-  let { isPolling, loginData, login, logout } = useContext(Auth0);
+const LoginPrompt = () => {
+  let { isPolling, loginData, login } = useContext(Auth0);
 
   return (
     <>
-      <Text style={styles.header}>
-        Welcome to your new Internet Enabled Fridge
-      </Text>
+      <Text style={styles.header}>Welcome to your new Internet Enabled Fridge</Text>
       {!isPolling && (
         <>
           <Button style={styles.button} title="Start" onPress={login}>
@@ -26,10 +23,7 @@ export default LoginPrompt = () => {
       {isPolling && loginData && (
         <View style={styles.deviceCode}>
           <View style={styles.deviceCodePane}>
-            <Text>
-              To complete the login process, go to the following URL on your
-              smartphone or computer
-            </Text>
+            <Text>To complete the login process, go to the following URL on your smartphone or computer</Text>
             <Text style={styles.highlight}>{loginData.verification_uri}</Text>
             <Text>The user code you'll be asked for is:</Text>
             <Text style={styles.highlight}>{loginData.user_code}</Text>
@@ -44,3 +38,5 @@ export default LoginPrompt = () => {
     </>
   );
 };
+
+export default LoginPrompt;

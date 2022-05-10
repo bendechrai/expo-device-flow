@@ -1,11 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 
-import {
-  startDeviceFlow,
-  pollForTokens,
-  cancelTokenPoll,
-} from "./auth0-helpers";
+import { startDeviceFlow, pollForTokens, cancelTokenPoll } from "./auth0-helpers";
 
 import { autoLogin, forgetUser, rememberUser } from "./login-helpers";
 
