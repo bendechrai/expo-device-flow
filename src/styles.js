@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   },
   header: {
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 22,
     marginBottom: 50,
   },
   deviceCode: {
@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
   deviceCodePane: {
     padding: "5%",
     maxWidth: 350,
+    marginTop: "20%",
   },
   highlight: {
     backgroundColor: "#ccc",
